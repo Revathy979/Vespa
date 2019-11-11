@@ -1,0 +1,16 @@
+img{
+    margin-top:175px;
+    width:600px;
+}
+.align-para{
+    float:right;
+    padding-top:200px;
+    font-family: "Liberation Mono";
+    font-size:33px;
+    text-align:left;
+}
+.txt-para{
+    font-family: "Chandas";
+    font-size: 18px;
+    color: rgb(127, 129, 133);
+}

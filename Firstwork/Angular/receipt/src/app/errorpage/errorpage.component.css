@@ -1,0 +1,36 @@
+.head_txt {
+    font-family: fantasy;
+    color: #0078d4;
+    background-color: #c4dff6;
+}
+
+.main_div {
+    height: 500px;
+}
+
+.nav_div {
+    padding-left: 30px;
+    width: 300px;
+
+}
+
+.content_div {
+    border-top: 1px solid #caccd1;
+    border-left: 1px solid #caccd1;
+    /* background-color: #dcdcdc; */
+    height: 545px;
+    margin-top: 1px;
+}
+
+label {
+    padding-right: 15px;
+    /* padding-top: 6px; */
+    font-size: 22px;
+    font-family: fantasy;
+}
+
+.main_content {
+    width: 550px;
+    margin: auto;
+    padding-top: 100px;
+}

@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="d-flex main_div">
+    <app-sidebar></app-sidebar>
+    <div class="container-fluid content_div">
+        <form>
+            <div class="form main_content">
+                <div class="form-group">
+                    <div>
+                        <label for="id" class="form-label">Id</label>
+                        <input type="text" placeholder="Id" name="txtid" #txtid="ngModel" required
+                            [(ngModel)]="receipt.id" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div><label for="name" class="form-label">Name</label></div>
+                    <input type="text" placeholder="Name" name="txtName" #txtName="ngModel" required
+                        [(ngModel)]="receipt.name" class="form-control " />
+                    <div class="error-msg alert alert-danger"
+                        *ngIf="txtName.invalid &&(txtName.dirty||txtName.touched)">
+                        <div *ngIf="txtName.errors?.required">This field is required</div>
+                    </div>
+                </div>
+                <div class=" form-group">
+                    <div><label for="Address" class="form-label ">Address</label></div>
+                    <input type="text" placeholder="Address" name="addresstxt" #addresstxt="ngModel" required
+                        [(ngModel)]="receipt.address" class="form-control " />
+                    <div class="error-msg alert alert-danger"
+                        *ngIf="addresstxt.invalid &&(addresstxt.dirty||addresstxt.touched)">
+                        <div *ngIf="addresstxt.errors?.required">This field is required </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div><label for="Amount" class="form-label ">Amount</label></div>
+                    <input type="text" placeholder="Amount" name="amttxt" #amttxt="ngModel" required
+                        [(ngModel)]="receipt.amount" class="form-control " />
+                    <div class="error-msg alert alert-danger" *ngIf="amttxt.invalid &&(amttxt.dirty||amttxt.touched)">
+                        <div *ngIf="amttxt.errors?.required">This field is required</div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-primary" (click)="saveReceipt()" type="submit">Save</button>
+                </div>
+
+
+            </div>
+        </form>
+    </div>

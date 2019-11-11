@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <script src="assets/scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/scripts/popper.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/scripts/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <div>
+            <img class="rounded-circle" src="assets/images/Profile.jpeg" style="height:100px;width:100px;">
+        </div>
+        <div>
+            <div>
+                <label for="name">
+                <p class="text-info">Emp Name</p>
+            </label>
+            </div>
+            <div>
+                <a href="#" id="edit"><i class="fa fa-edit"></i></a>
+            </div>
+
+           
+            <script>
+                $('#edit').click(function () {
+                    var text = $('.text-info').text();
+                    var input = $('<input id="attribute" type="text" value="' + text + '" />')
+                    $('.text-info').text('').append(input);
+                    input.select();
+
+                    input.blur(function () {
+                        var text = $('#attribute').val();
+                        $('#attribute').parent().text(text);
+                        $('#attribute').remove();
+                    });
+                });
+            </script>
+
+        </div>
+        <div>
+            <label for="Employee Code" placeholder="Employee Code">Employee Code</label>
+        </div>
+        <div>
+            <label for="Designation" placeholder="Designation">Designation</label>
+        </div>
+        <div>
+            <form class="md-form">
+                <div class="file-field">
+                    <a class="btn-floating blue-gradient float-left"><i class="fa fa-paperclip" aria-hidden="true"></i>
+                        <input type="file" /></a>
+                    <div class="file-path-wrapper">
+                        <input type="text" class="file-path validate" placeholder="Upload photo">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <label for="name" class="control-label">
+        <p class="text-info">Emp Name</p>
+        <a href="#" id="edit"><i class="fa fa-edit"></i></a>
+    </label>
+    <script>
+        $('#edit').click(function () {
+            var text = $('.text-info').text();
+            var input = $('<input id="attribute" type="text" value="' + text + '" />')
+            $('.text-info').text('').append(input);
+            input.select();
+
+            input.blur(function () {
+                var text = $('#attribute').val();
+                $('#attribute').parent().text(text);
+                $('#attribute').remove();
+            });
+        });
+    </script> -->
+
+</body>
+
+</html>

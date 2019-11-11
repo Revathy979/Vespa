@@ -1,0 +1,28 @@
+.workitem {
+    width: 122px;
+    margin-left: 36px;
+}
+
+input {
+    width: 44px;
+    height: 33px;
+    text-align: center;
+}
+
+.txtbox-align {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    width: 10%;
+}
+
+.label-align {
+    margin-right: 40px;
+}
+.btn{
+    margin-right: 10px;
+    margin-top:10px;
+    border-radius:23px;
+
+
+}

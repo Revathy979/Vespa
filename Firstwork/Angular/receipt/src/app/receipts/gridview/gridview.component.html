@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="d-flex main_div">
+    <app-sidebar></app-sidebar>
+    <div class="container-fluid content_div">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userdata of userData">
+                    <td>{{userdata.id}}</td>
+                    <td ><a [routerLink]="['/receipts/new']"style="text-decoration:none;">{{userdata.name}}</a></td>
+                    <td>{{userdata.address}}</td>
+                    <td>{{userdata.amount}}</td>
+                    <td><a [routerLink]="['']"style="text-decoration:none;">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

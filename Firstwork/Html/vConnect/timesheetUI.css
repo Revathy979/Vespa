@@ -1,0 +1,71 @@
+.effort-in-a-day {
+    border: 1px solid #0078D4;
+    border-radius: 5px;
+    height: 91px;
+    margin-top: 10px;
+}
+
+.effort {
+    margin-top: 17px;
+    margin-left: 40px;
+    margin-right: 67px;
+}
+
+.table-style {
+    width: 60%;
+    border-right: 1px solid darkgrey;
+}
+
+.a {
+    text-decoration: none;
+}
+
+.side-div {
+    margin-top: 10px;
+    width: 40%;
+    margin-left: 16px;
+}
+
+.description {
+    width: 100%;
+    margin-top: 2px;
+}
+
+.state {
+    margin-top: 2px;
+    height: 27px;
+}
+
+.browser-default {
+    height: 27px;
+    padding: 1px;
+}
+
+.input-height {
+    height: 27px;
+}
+
+.icon {
+    color: red;
+}
+
+.date-in-nav {
+    width: 40%;
+    margin-right: 10px;
+}
+
+.time-sheet-tab {
+    margin-top: 10px;
+}
+
+.tab-div {
+    margin-left: -16px;
+}
+
+.effort-in-tab {
+    width: 30%;
+    margin-right: 10px;
+}
+.add-btn{
+    width:30%;
+}

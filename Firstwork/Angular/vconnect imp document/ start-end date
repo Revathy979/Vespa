@@ -1,0 +1,41 @@
+//views.comp.ts
+
+export class ViewComponent implements OnInit {
+  public d:Date = new Date();
+  public day:any= this.d.getDay();
+  public diff:any= this.d.getDate()-this.day+(this.day==0? -6:1);
+  public startDate: Date = new Date(this.d.setDate(this.diff));
+
+  public endDate: Date = new Date();
+  public days: number = 6;
+
+  public timeSheet: TimeSheet;
+
+  constructor() {
+    this.endDate.setDate(this.startDate.getDate() + this.days);
+    this.timeSheet = new TimeSheet(this.startDate, this.endDate, []);
+    console.log("startDate:" + this.startDate)
+    console.log("endDate:" + this.endDate)
+  }
+//view.comp.ts
+while (this.stDate < this.weekEndsOn) {
+     this.stDate = new Date(this.dateMove.setDate(this.dateMove.getDate() + 1))
+     this.dates.push(this.stDate)
+
+     console.log(this.dates)
+     }
+
+
+
+//view.comp.html
+
+ <tr>
+            <th scope="col"></th>
+            <th scope="col">{{timeSheet.startDate | date:"EEEE"}}<br>{{timeSheet.startDate | date:"dd/MM/yyyy"}}</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+            <th scope="col">Saturday</th>
+            <th scope="col">{{timeSheet.endDate | date:"EEEE"}}<br>{{timeSheet.endDate | date:"dd/MM/yyyy"}}</th>
+        </tr>

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="d-flex main_div">
+    <app-sidebar></app-sidebar>
+    <div class="container-fluid content_div">
+        <div class="d-flex form main_content">
+            <div class="form-group search_txt">
+                <input type="text" placeholder="Search..." class="form-control" id="searchtxt" [(ngModel)]="DataToBeSearched"(keydown.enter)="search()"/>
+            </div>
+
+            <div class="search_btn">
+                <button class="btn btn-primary" type="button"(click)="search()">Search</button>
+            </div>
+        </div>
+        <div>
+            <ul class="ulstyle">
+                <div>
+                    <li class="listyle" *ngFor="let userdata of userData">
+                        <div class="d-flex">
+                            <div class='amtdiv' style="width:10%;">
+                                <h1>{{userdata.amount}}</h1>
+                            </div>
+                            <div style="width:80%;">
+                                <h3 style="font-family: serif;">{{userdata.name}}</h3>
+                                <h5 style="color:gray;font-family: fantasy;">{{userdata.address}}</h5>
+                            </div>
+                            <div class="font_div">
+                                <a class="fa fa-angle-right font" [routerLink]="['/receipts/edit',userdata.id]"></a>
+
+                            </div>
+                        </div>
+                    </li>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</div>

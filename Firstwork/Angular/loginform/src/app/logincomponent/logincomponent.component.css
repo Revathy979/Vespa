@@ -1,0 +1,14 @@
+.format{
+    margin-top:200px;
+    height:300px;
+    width:200px;
+    align-content:center;
+}
+.txtbox{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.txtfont{
+    font-family: "chandas";
+    font-size:30px;
+}

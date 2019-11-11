@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <script src="assets/scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/scripts/popper.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/scripts/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/icon.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="row bgcolor">
+        <div class="col-md-4 logo">
+            <img class="img-adjust image" src="assets/images/vConnect_Logo.png">vConnect
+        </div>
+        <div class=col-md-2></div>
+        <div class="col-md-4 menubar d-flex justify-content-end">
+            <nav class="navbar navbar-expand-sm">
+                <ul class="navbar-nav navi-bar">
+                    <li class="nav-item"><a class="nav-link" style="color:#0671B7;font-family:chandas;"
+                            href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:#0671B7;font-family:chandas;"
+                            href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:#0671B7;font-family:chandas;"
+                            href="#">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link fa fa-envelope" data-toggle="tooltip"
+                            title="Email Notification"></a></li>
+                    <li class="nav-item"><a class="nav-link fa fa-bell-o" data-toggle="tooltip"
+                            title="Message Notification"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class=" col-md-3 profile d-flex justify-content-start name dropdown">
+                <img class="rounded-circle" src="assets/images/Profile.jpeg" data-holder-rendered="true"
+                    aria-haspop="true" aria-expand="false" style="width:50px;height:50px;">
+            </div>
+            <div class="col-md-8 dropdown  adjust d-flex justify-content-end">
+                <a class="downdown-toggle " data-toggle="dropdown" style="cursor:pointer;">
+                    Mark Charles<span class='fa fa-angle-down'></span></a>
+                <div class="dropwrapper dropdown-menu">
+                    <div class="row">
+                        <div class="col-md-3 image">
+                            <img class="rounded-circle" src="assets/images/Profile.jpeg">
+                        </div>
+                        <div class="col-md-6 name" style="margin-right:5px;margin-top:15px;margin-bottom:15px;">
+                            <h5><b>MarkCharles</b></h5>
+                            <span style="color:gray;">charles@outlook.com</span>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div class="menu">
+                        <div class="dropdown-item"><a class="spacing-text" href="#"><i
+                                    class="fa fa-user-circle-o icon-spacing"></i>Profile</a></div>
+                        <div class="dropdown-item"><a class="spacing-text" href="#"><i
+                                    class="fa fa-arrow-circle-o-down icon-spacing"></i>Punch In</a></div>
+                        <div class="dropdown-item"><a class="spacing-text" href="#"><i
+                                    class="fa fa-arrow-circle-o-up icon-spacing"></i>Punch Out</a></div>
+                        <div class="dropdown-item"><a class="spacing-text" href="#"><i
+                                    class="fa fa-sign-out icon-spacing"></i>LogOut</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-3 sidebar border">
+            <div class = "row">
+            <nav class="navbar">
+                <div>
+                    <div class = "border border-right-0 border-top-0 border-left-0">
+                        <a class="navbar-link accordion-toggle menu-item" data-toggle="collapse" href="#new"
+                            aria-expanded = "false" aria-controls="new"><i
+                            class="fa fa-external-link icon-spacing"></i>New
+                        <span class = "icon fa fa-angle-down"></span></a>
+                    </div>
+                    <div id = "new" class = "collapse ">
+                        <ul class = "navbar-nav subitem">
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-question icon-spacing"></i>Query</a></li>
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item nav-link"><i
+                                class="fa fa-file icon-spacing"></i>Work Item</a></li>
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-paperclip icon-spacing"></i>Product Backlog</a></li>
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-wrench icon-spacing"></i>Bug</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a class="navbar-link accordion-toggle menu-item border border-right-0 border-top-0 border-left-0" data-toggle="collapse" href="#myqueries"
+                            aria-expanded = "false" aria-controls="myqueries"><i
+                            class="fa fa-question-circle icon-spacing"></i>My Queries
+                            <span class = "icon fa fa-angle-down"></span></a>
+                    </div>
+                    <div id = "myqueries" class = "collapse">
+                        <ul class = "navbar-nav subitem">
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-bell-o icon-spacing"></i>All assigned to me</a></li>
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-th icon-spacing"></i>Custom1</a></li>
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-th-large icon-spacing"></i>Custom2</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a class="navbar-link accordion-toggle menu-item border border-right-0 border-top-0 border-left-0" data-toggle="collapse" href="#sharedqueries"
+                            aria-expanded = "false" aria-controls="sharedquries"><i
+                            class="fa fa-bullhorn icon-spacing"></i>
+                            <span class = "icon fa fa-angle-down"></span>Shared Queries</a>
+                    </div>
+                    <div id = "sharedqueries" class = "collapse">
+                        <ul class = "navbar-nav subitem">
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-cogs icon-spacing"></i>Releases</a></li>
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-chain icon-spacing"></i>Name1-3.0.1</a></li>
+                            <li class="nav-item border border-right-0 border-top-0 border-left-0"><a href="#" class="menu-item   nav-link"><i
+                                class="fa fa-chain-broken icon-spacing"></i>Name2-3.0.2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>  
+            </div>  
+        </div>
+        <div class="col-md-9 content">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="Timesheet.css" />
+    <link rel="stylesheet" href="assets/scripts/bootstrap.min.css" />
+    <script src="assets/scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <script src="assets/scripts/popper.min.js"></script>
+
+</head>
+
+<body>
+    <div id="editWork" class="  tab-pane fade" style="margin-top:30px;">
+        <form style="margin-top:20px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Estimated Effort</th>
+                        <th scope="col">Actual Effort</th>
+                        <th scope="col">Planned Start Date</th>
+                        <th scope="col">Planned End Date</th>
+                        <th scope="col">Actual Start Date</th>
+                        <th scope="col">Actual End Date</th>
+                        <th scope="col">Status</th>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#workitem"><span
+                                class="fa fa-plus fa-lg" style="color:#0671B7;"></span></button>
+                        <div class="modal fade" id="workitem" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">WorkItem</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form style="width:450px;margin:auto;">
+                                            <div class="form-group">
+                                                <label for="title">Title</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="EstimatedEffort">Estimated Effort</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ActualEffort">Actual Effort</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="PlannedStartDate">Planned Start Date</label>
+                                                <input type="date" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="PlannedEndDate">Planned End Date</label>
+                                                <input type="date" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ActualStartDate">Actual Start Date</label>
+                                                <input type="date" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ActualEndDate">Actual End Date</label>
+                                                <input type="date" class="form-control" />
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <label for="Id"></label></td>
+                        <td><label for="Title"></label></td>
+                        <td><label for="EstimatedEffort"></label></td>
+                        <td><label for="ActualEffort"></label></td>
+                        <td><label for="PlannedStartDate"></label></td>
+                        <td><label for="PlannedEndDate"></label></td>
+                        <td><label for="ActualStartDate"></label></td>
+                        <td><label for="ActualEndDate"></label></td>
+                        <td><label for="Status"></label></td>
+                        <td>
+                            <button type="button" class="btn btn-default" style="margin-top:20px;" data-toggle="modal"
+                                data-target="#workitem"><span class="fa fa-edit fa-lg"
+                                    style="color:#0671B7;"></span></button>
+                            <div class="modal fade" id="workitem" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">WorkItem</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" style="margin:auto;width:450px;">
+
+                                                <div class="form-group">
+                                                    <label for="title">Title</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="EstimatedEffort">Estimated Effort</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ActualEffort">Actual Effort</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="PlannedStartDate">Planned Start Date</label>
+                                                    <input type="date" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="PlannedEndDate">Planned End Date</label>
+                                                    <input type="date" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ActualStartDate">Actual Start Date</label>
+                                                    <input type="date" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ActualEndDate">Actual End Date</label>
+                                                    <input type="date" class="form-control" />
+                                                </div>
+                                                <div>
+                                                    <button class="btn btn-primary">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-dismiss="modal">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <script src="assets/scripts/jquery-3.4.1.min.js"></script>
+    <style>
+        body {
+            margin-left: 0px;
+            margin-right: 0px;
+            background-color: #fff9ea;
+
+        }
+
+        .txtsearch {
+            width: 80%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .btnsearch {
+            width: 18.8%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .inputdiv {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .header {
+            background-color: #ee4f4f;
+            text-align: center;
+            height: 70px;
+        }
+
+
+        .amtdiv {
+            float: right;
+            padding-right: 150px;
+            margin-top: -94px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            display: block;
+            margin: 10px 0px;
+            padding: 10px;
+            border: 2px solid #ee4f4f;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <div style="padding-top: 1px;">
+            <h1>Moi</h1>
+        </div>
+    </div>
+    <div class="inputdiv">
+        <input type="text"id="textid" placeholder="Search..." class="txtsearch"onkeydown="show_data(event)"/>
+        <button onclick="show_data(event)" class="btnsearch" >Search</button>
+    </div>
+
+    <div>
+        <ul id="uldata">
+
+        </ul>
+    </div>
+    <script>
+        var data = [{
+            name: "Se. Arivazhagi S. Ganesh gnana sambandam, Karaikalmedu",
+            Address: "pondicherry",
+            Amount: "1000"
+        },
+        {
+            name: "A .Saravanan – Tamilarasi",
+            Address: "Karaikalmedu",
+            Amount: 52
+        }];
+
+        function show_data(e) {
+            if (e.which!==13){
+                return;
+            }
+            var x = $("#textid").val();
+            $.ajax({
+                type: "GET",
+                url: 'http://localhost:8000/api/v1/receipts/?name='+x,
+                datatype: 'json',
+                success: function (data) {
+                    console.log(x);
+                    console.log(data);
+
+                    function build_data(data) {
+                        var tags = "<div><h3>" + data.name + "</h3>" + "<h4>" + data.address + "</h4></div><div class='amtdiv'><h1>" + data.amount + "</h1></div>"
+                        return tags;
+                    }
+                    var uldata = document.getElementById("uldata");
+                    $(uldata).empty();
+                    data.forEach(function (d) {
+                        var li = document.createElement("li");
+                        li.innerHTML = build_data(d);
+                        uldata.appendChild(li);
+                    });
+                    console.log(data);
+                }
+               
+            });
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

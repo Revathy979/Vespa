@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            function sum(){
+            var a,b,s;
+            a=Number(document.getElementById("first").value);
+            b=Number(document.getElementById("second").value);
+            s=a+b;            
+            //document.write(a+"+"+b+"="+s);
+            var resultContainer = document.getElementById("lblResult");
+            resultContainer.innerHTML = "Your Result is"+a+"+"+b+"="+s;
+            }
+        </script>
+    </head>
+    <body>
+        A value:<input type="text" id="first"/><br>
+        B value:<input type="text" id="second"/><br>
+        <button onclick="sum()" >add</button>
+        <p id="lblResult"></p>
+    </body>
+
+</html>

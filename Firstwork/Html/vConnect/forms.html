@@ -1,0 +1,602 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="forms.css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/scripts/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap-datepicker3.css" />
+  <script src="assets/scripts/jquery-3.3.1.slim.min.js"></script>
+  <script src="assets/scripts/bootstrap.min.js"></script>
+  <script src="assets/scripts/popper.min.js"></script>
+  <script src="assets/scripts/bootstrap-datepicker.min.js"></script>
+  <script src="assets/scripts/bootstrap-show-password.js"></script>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-2" style="text-align:center;">
+      <div class="row"style="padding-top: 40px;">
+        <div>
+          <img class="rounded-circle profile-img" src="assets/images/Profile.jpeg">
+        </div>
+        <div>
+          <div>
+            <label for="name" style="margin-left:37px;    margin-top: 37px;">
+              <p class="text-infor">Emp Name</p>
+            </label><a href="#" id="edit" style="padding: 10px;"><i class="fa fa-edit"></i></a>
+          </div>
+          <script>
+            $('#edit').click(function () {
+              var text = $('.text-infor').text();
+              var input = $('<input id="attribute" type="text" value="' + text + '" />')
+            
+              $('.text-infor').text('').append(input);
+              input.select();
+              // input.style['width']='30px';
+
+              input.blur(function () {
+                var text = $('#attribute').val();
+                $('#attribute').parent().text(text);
+                $('#attribute').remove();
+              });
+            });
+          </script>
+        </div>
+        <div >
+          <div style="margin-left:37px;margin-bottom:10px;">
+            <label for="Employee Code" placeholder="Employee Code">Employee Code</label>
+          </div>
+          <div style="margin-left:10px;">
+            <label for="Designation" placeholder="Designation">Designation</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class=" nav-style">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link 43pxtab" href="#PersonalDetail">Personal Detail</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#PermanentAddress">Permanent Address</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#PresentAddress">Present Address</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#BankDetails">Bank Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#EducationDetails">Education Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#ExpDetails">Experience Detail</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Security">Security</a>
+          </li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div><button class="btn btn-primary" style="float:right;margin-bottom:21px;margin-right: 53px;">Save</button></div>
+
+          <div id="PersonalDetail" class="  tab-pane active" style="margin-top:30px;">
+            <form action="" class="personal-form">
+
+              <div class="form-group">
+                <label for="FirstName" class="form-control-label">First Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="LastName" class="form-control-label">Last Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="MiddleName" class="form-control-label">Middle Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="FatherName" class="form-control-label">Father's Name / Husband's Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="DateofBirth" class="form-control-label">Date of Birth</label>
+                <!-- <i class="fa fa-calendar"aria-hidden="true"></i> -->
+                <input id="datepicker" class="form-control" />
+                <script>
+                  $('#datepicker').datepicker();
+                </script>
+              </div>
+            </form>
+            <form style="float:right;width:450px;margin-top:20px;margin-right: 50px;">
+              <div class="form-group"style="margin-top:20px;">
+                <label for="Gender" class="form-control-label">Gender</label>
+                <select class="form-control">
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="MaritalStatus" class="form-control-label">Marital Status</label>
+                <select class="form-control">
+                  <option>Single</option>
+                  <option>Married</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ContactNo" class="form-control-label">Mobile Number</label>
+                <input type="tel" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="AltContactNo" class="form-control-label">Alternate Mobile Number</label>
+                <input type="tel" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="Photo" class="form-control-label">Photo</label>
+                <input type="file" class="form-control-inline" />
+              </div>
+            </form>
+          </div>
+
+          <!-- permanent address -->
+          <div id="PermanentAddress" class="  tab-pane fade"style="margin-top:30px;">
+            <form style="width:450px;float:left;margin-top:37px;">
+              <div style="margin-top:10px;">
+                <div class="form-group">
+                  <label for="DoorNo" class="form-control-label">Door No</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Street" class="form-control-label">Street</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="City" class="form-control-label">City</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="State" class="form-control-label">State</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Country" class="form-control-label">Country</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="ZipCode" class="form-control-label">Zip Code</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </form>
+            <form style="float:right;width:450px;margin-top:10px;margin-right:50px;">
+              <span style="font-size:18px"><b>Contact Person Details</b></span>
+              <div style="margin-top:10px;">
+                <div class="form-group">
+                  <label for="Name" class="form-control-label">Name</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Relationship" class="form-control-label">Relationship</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="ContactNo" class="form-control-label">Mobile Number</label>
+                  <input type="tel" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="AltContactNo" class="form-control-label">Alternate Mobile Number</label>
+                  <input type="tel" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Email" class="form-control-label">Email</label>
+                  <input type="email" class="form-control" />
+                </div>
+                
+              </div>
+
+            </form>
+          </div>
+
+
+          <!-- Present Address -->
+          <div id="PresentAddress" class="  tab-pane fade"style="margin-top:30px;">
+            <form style="width:450px;float:left;margin-top:37px;">
+              <div style="margin-top:10px;">
+                <div class="form-group">
+                  <label for="DoorNo" class="form-control-label">Door No</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Street" class="form-control-label">Street</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="City" class="form-control-label">City</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="State" class="form-control-label">State</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Country" class="form-control-label">Country</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="ZipCode" class="form-control-label">Zip Code</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </form>
+            <form style="float:right;width:450px;margin-top:20px;">
+              <span style="font-size:18px"><b>Contact Person Details</b></span>
+              <div style="margin-top:10px;">
+                <div class="form-group">
+                  <label for="Name" class="form-control-label">Name</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Relationship" class="form-control-label">Relationship</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="ContactNo" class="form-control-label">Mobile Number</label>
+                  <input type="tel" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="AltContactNo" class="form-control-label">Alternate Mobile Number</label>
+                  <input type="tel" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="Email" class="form-control-label">Email</label>
+                  <input type="email" class="form-control" />
+                </div>
+                
+              </div>
+
+            </form>
+          </div>
+          <!-- bank details -->
+          <div id="BankDetails" class="  tab-pane fade"style="margin-top:30px;">
+            <form style="width:450px;margin-top:20px;margin:auto;">
+              <div class="form-group">
+                <label for="AccountNo" class="form-control-label">Account Number</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="IFSCCode" class="form-control-label">IFSC Code</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="PANNo" class="form-control-label">PAN Number</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="Pan Card" class="form-control-label">PAN Card</label><br>
+                <input type="file" />
+              </div>
+            </form>
+          </div>
+          <!-- bank details end -->
+          <!-- Educational details -->
+          <div id="EducationDetails" class="  tab-pane fade"style="margin-top:30px;">
+            <form style="margin-top:20px;">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Course</th>
+                    <th scope="col">Institute</th>
+                    <th scope="col">University</th>
+                    <th scope="col">Marks</th>
+                    <th scope="col">Year of Passing</th>
+                    <th scope="col">Mark Card</th>
+                    <th scope="col">Degree Certificate</th>
+                    <th scope="col">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#edu"><span
+                          class="fa fa-plus fa-lg" style="color:#0671B7;"></span></button>
+                      <div class="modal fade" id="edu" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Education Detail</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <form style="width:450px;margin-top:20px;">
+                                <div class="form-group">
+                                  <label for="Course" class="form-control-label">Course</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Institute" class="form-control-label">Institute</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="University" class="form-control-label">University</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Marks" class="form-control-label">Marks</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="YOP" class="form-control-label">Year of Passing</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Markcard" class="form-control-label">Mark Card</label>
+                                  <input type="file" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Markcard" class="form-control-label">Certificate</label>
+                                  <input type="file" />
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <label for="Course"></label></td>
+                    <td><label for="Institute"></label></td>
+                    <td><label for="University"></label></td>
+                    <td><label for="Mark"></label></td>
+                    <td><label for="Year of Passing"></label></td>
+                    <td><label for="Markcard"></label></td>
+                    <td><label for="Certificate"></label></td>
+                    <td>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#edu"><span
+                          class="fa fa-edit fa-lg" style="color:#0671B7;"></span></button>
+                      <div class="modal fade" id="edu" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Education Detail</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <form style="width:450px;margin-top:20px;">
+                                <div class="form-group">
+                                  <label for="Course" class="form-control-label">Course</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Institute" class="form-control-label">Institute</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="University" class="form-control-label">University</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Marks" class="form-control-label">Marks</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="YOP" class="form-control-label">Year of Passing</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Markcard" class="form-control-label">Mark Card</label>
+                                  <input type="file" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Markcard" class="form-control-label">Certificate</label>
+                                  <input type="file" />
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <!-- Experience details -->
+          <div id="ExpDetails" class="  tab-pane fade"style="margin-top:30px;">
+            <form style="margin-top:20px;">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Date of Joining</th>
+                    <th scope="col">Date of Relieving</th>
+                    <th scope="col">Experience Letter</th>
+                    <th scope="col">Relieving Letter</th>
+                    <th scope="col">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exp"><span
+                          class="fa fa-plus fa-lg" style="color:#0671B7;"></span></button>
+                      <div class="modal fade" id="exp" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Experience detail</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <form style="width:450px;margin:auto;">
+                                <div class="form -group">
+                                  <label for="Co ompanyName">Company Name</label>
+                                  <input type="t ext" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Designation">Designation</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="DOJ">Date of Joining</label>
+                                  <input id="DOJ" class="form-control" />
+                                  <script>
+                                    $('#DOJ').datepicker();
+                                  </script>
+                                </div>
+                                <div class="form-group">
+                                  <label for="DOR">Date of Relieving</label>
+                                  <input id="DOR" class="form-control" />
+                                  <script>
+                                    $('#DOR').datepicker();
+                                  </script>
+                                </div>
+                                <div class="form-group">
+                                  <label for="ExpLet">Experience Letter</label><br>
+                                  <input type="file" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="RelievingLet">Relieving Letter</label><br>
+                                  <input type="file" />
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <label for="CompanyName"></label></td>
+                    <td><label for="Designation"></label></td>
+                    <td><label for="Date of Joining"></label></td>
+                    <td><label for="Date of Relieving"></label></td>
+                    <td><label for="ExpLet"></label></td>
+                    <td><label for="RelievingLet"></label></td>
+                    <td>
+                      <button type="button" class="btn btn-default" style="margin-top:20px;" data-toggle="modal"
+                        data-target="#exp"><span class="fa fa-edit fa-lg" style="color:#0671B7;"></span></button>
+                      <div class="modal fade" id="exp" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Experience detail</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                              <form style="width:450px;margin:auto;">
+                                <div class="form-group">
+                                  <label for="CoompanyName">Company Name</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Designation">Designation</label>
+                                  <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="DOJ">Date of Joining</label>
+                                  <input id="DOJ" class="form-control" />
+                                  <script>
+                                    $('#DOJ').datepicker();
+                                  </script>
+                                </div>
+                                <div class="form-group">
+                                  <label for="DOR">Date of Relieving</label>
+                                  <input id="DOR" class="form-control" />
+                                  <script>
+                                    $('#DOR').datepicker();
+                                  </script>
+                                </div>
+                                <div class="form-group">
+                                  <label for="ExpLet">Experience Letter</label><br>
+                                  <input type="file" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="RelievingLet">Relieving Letter</label><br>
+                                  <input type="file" />
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <!-- document -->
+          <div id="Document" class="  tab-pane fade">
+            <form style="width:450px;margin:auto;">
+              <div class="form-group row">
+                <label for="Mark Card " class="form-control-label">Mark Card </label>
+                <input type="file" class="form-control-inline" />
+              </div>
+              <div class="form-group row-inline">
+                <label for="Adhaar Card" class="form-control-label">Adhaar Card</label>
+                <input type="file" class="form-control-inline" />
+              </div>
+              <div class="form-group row">
+                <label for="Exp Letter" class="form-control-label">Experience Letter</label>
+                <input type="file" class="form-control-inline" />
+              </div>
+              <div class="form-group row">
+                <label for="Tax Declaration" class="form-control-label">Tax Declaration</label>
+                <input type="file" class="form-control-inline" />
+              </div>
+              <div class="form-group row">
+                <label for="Degree certificate" class="form-control-label">Degree certificate</label>
+                <input type="file" class="form-control-inline" />
+              </div>
+              <div class="form-group row">
+                <label for="Pan Card" class="form-control-label">PAN Card</label>
+                <input type="file" class="form-control-inline" />
+              </div>
+              <div class="form-group row">
+                <label for="Relieving Letter" class="form-control-label">Relieving Letter from Previous
+                  Employer</label>
+                <input type="file" class="form-control-inline" />
+              </div>
+            </form>
+          </div>
+          <!-- security -->
+          <div id="Security" class="tab-pane fade d-flex justify-content-center"style="margin-top:30px;">
+            <form style="width:450px;margin-top:20px;">
+              <div class="form-group">
+                <label for="OldPass" class="form-label">Old Password</label>
+                <input type="password" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="NewPass" class="form-label">New Password</label>
+                <input type="password" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="ConfirmPass" class="form-label">Confirm Password </label>
+                <input type="password" class="form-control" />
+              </div>
+            </form>
+
+          </div>
+          <!-- security end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
