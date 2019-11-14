@@ -56,7 +56,7 @@ def edit(request, code):
 
 
 def delete(request, code):
-    employee = EmployeeDetail.objects.get(code=code)
+    employee = EmployeeDetail.objects.filter(code=code)
     employee.delete()
     return redirect("/show")
 
@@ -66,43 +66,37 @@ def search(request):
     if request.method == 'GET':
         return render(request, 'search.html')
     elif request.method == 'POST':
-        fname = request.POST.get("fname")
+        print("post")
+        fname = request.POST.get("searchedData")
+        print(fname)
         employee = EmployeeDetail.objects.filter(fname__iregex=fname)
-        for i in employee:
-            data = {
-                'employee': employee
-            }
-        print(employee)
-        return render(request, 'search.html', context=data)
+        # data = {'employee': employee}
+        return render(request, 'searchedData.html', context={'employee': employee})
 
 
 def upload(request):
+    if request.method == 'GET':
+        return render(request, 'upload.html')
+    elif request.method == 'POST':
+        print('post')
+        file_name = request.POST.get("fileName")
+        print(file_name)
+        df = pd.read_excel('/home/iness/Revathy/Training document/'+file_name)
+        row = len(df)
+        col = len(df.columns)
+        for i in range(0, row, 1):
+            employee = EmployeeDetail(
+                code=df.iloc[i][0], fname=df.iloc[i][1], lname=df.iloc[i][2], email=df.iloc[i][3], phone=df.iloc[i][4])
+            employee.save()
 
-    return render(request, 'upload.html')
-    # else:
-    #     excel_file = request.FILES['excel_file']
-    #     wb = openpyxl.load_workbook(excel_file)
-    #     worksheet = wb["Sheet1"]
-    #     print(worksheet)
-    #     excel_data = list()
-    #     for row in worksheet.iter_rows():
-    #         row_data = list()
-    #         for cell in row:
-    #             row_data.append(str(cell.value))
-    #         excel_data.append(row_data)
-    #         employee = EmployeeDetail(
-    #             name=row_data[0], employee_code=row_data[1], email_id=row_data[2], contact_no=row_data[3], salary=row_data[4])
-    #         employee.save()
-    #     employee = EmployeeManagement.objects.all()
-    #   return redirect ('/show',context={'employee':employee})
-
-# def searchedData(request, fname):
-#     employee = EmployeeDetail.objects.get(fname=fname)
-#     return render(request, 'searchedData.html',context={'employee':employee})
+        emplist = EmployeeDetail.objects.all()
+    # with pd.ExcelWriter('newfile.xlsx') as writer:
+    #     emplist.to_excel(writer, sheet_name='employeedetails')
+    return render(request, 'show.html', context={'emplist': emplist})
 
 
 def chart(request):
-    # Create an object for the column2d chart using the FusionCharts class constructor
+            # Create an object for the column2d chart using the FusionCharts class constructor
     column2d = FusionCharts("column2d", "ex1", "684", "476", "chart-1", "json",
                             # The data is passed as a string in the `dataSource` as parameter.
                             """{  

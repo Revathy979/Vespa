@@ -1,11 +1,37 @@
 <html>
+
 <head>
   <title>FC-python wrapper</title>
-  {% load static %} 
-   <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
-   <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.theme.gammel.js" %}"></script>
+  <link rel="stylesheet" href='/static/assets/css/bootstrap.min.css' />
+  <link rel="stylesheet" href='/static/index.css'>
+  <link rel="stylesheet" href='/static/assets/css/font-awesome.min.css'>
+  <script src='/static/assets/scripts/jquery-3.3.1.slim.min.js'></script>
+  {% load static %}
+  <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
+  <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.theme.fusion.js" %}"></script>
 </head>
+
 <body>
-  <div id="chart-1">{{ output|safe }}</div>
+  <div class="row">
+    <div class="col-md-4">
+      <h2 style="font-family: 'Lucida Sans';">Employee Management</h2>
+    </div>
+    <div class="col-md-8 d-flex justify-content-end">
+      <nav class="navbar navbar-expand-md stick-top">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link spacing_icon" href="/" data-toggle="tooltip" data-placement="bottom"
+              title="Home"><i class="fa fa-home"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+  <div id="chart-1" class="d-flex justify-content-center">{{ output|safe }}</div>
 </body>
+
 </html>
+
+
+
+

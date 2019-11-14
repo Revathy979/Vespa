@@ -24,10 +24,21 @@
     </div>
     <div class="row">
         <div style="width:450px;margin-left:450px; ">
-            <form>
+            <form method="post">
+                {% csrf_token %}
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
+                    <input type="file" class="custom-file-input" id="customFile" name="fileName">
                     <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary" onclick="msg()" id="upload" value="Upload" />
+                    <script>
+                        
+                        function msg() {
+                            alert("uploaded Successfully");
+                        }
+                    </script>
+
                 </div>
             </form>
 

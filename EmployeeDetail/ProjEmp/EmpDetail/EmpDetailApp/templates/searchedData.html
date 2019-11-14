@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href='/static/assets/css/bootstrap.min.css' />
+    <link rel="stylesheet" href='/static/index.css'>
+    <link rel="stylesheet" href='/static/assets/css/font-awesome.min.css'>
+    <link rel="stylesheet" href='/static/assets/css/bootstrap-datepicker3.css'>
+    <script src='/static/assets/scripts/bootstrap.min.js'></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 style="font-family: 'Lucida Sans';">Employee Management</h2>
+            </div>
+            <div class="col-md-8 d-flex justify-content-end">
+                <a href="/"> <i class="fa fa-home" style=" margin-top: 18px;
+                            margin-right: 10px;"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-end" style="float:left; font-weight:bolder;font-size: 30px;
+                font-family: cursive;">
+                <p>Employee Detail</p>
+            </div>
+        </div>
+        <div class="row tab-align" method="post">
+            {%csrf_token%}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" id="Code">Code</th>
+                        <th scope="col" id="FirstName">FirstName</th>
+                        <th scope="col" id="LastName">LastName</th>
+                        <th scope="col" id="Email">Email</th>
+                        <th scope="col" id="Phone">Phone</th>
+                        <th scope="col" id="Action">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in employee %}
+                    <tr>
+                        <td><label for="Code">{{e.code}}</label></td>
+                        <td><label for="FirstName"><a href="/edit/{{e.code}}">{{e.fname}}</a></label></td>
+                        <td><label for="LastName">{{e.lname}}</label></td>
+                        <td><label for="Email">{{e.email}}</label></td>
+                        <td><label for="Phone">{{e.phone}}</label></td>
+                        <td><a href="/delete/{{e.code}}"><i class="fa fa-trash"></i></a></td>
+                    </tr>
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

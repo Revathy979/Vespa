@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href='/static/assets/css/bootstrap.min.css' />
     <link rel="stylesheet" href='/static/index.css'>
+    <link rel="stylesheet" href='/static/assets/searchbtn.css'>
     <link rel="stylesheet" href='/static/assets/css/font-awesome.min.css'>
     <link rel="stylesheet" href='/static/assets/css/bootstrap-datepicker3.css'>
     <script src='/static/assets/scripts/bootstrap.min.js'></script>
@@ -28,39 +29,12 @@
             </div>
 
         </div>
-        <div class="row tab-align" method="post" id="table">
+        <form class="example" method="post" style="margin:auto;max-width:300px">
             {%csrf_token%}
-            <div class="input-group" style="width:450px;margin-left:450px; ">
-                <input type="text" id="Search" name="fname" class="form-control" placeholder="Search by firstname...">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" id="SearchBtn" type="submit">
-                        <i class="fa fa-search text-light"></i>
-                    </button>
-                </div>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col" id="Code">Code</th>
-                        <th scope="col" id="FirstName">FirstName</th>
-                        <th scope="col" id="LastName">LastName</th>
-                        <th scope="col" id="Email">Email</th>
-                        <th scope="col" id="Phone">Phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in employee %}
-                    <tr>
-                        <td><label for="Code">{{i.code}}</label></td>
-                        <td><label for="FirstName">{{i.fname}}</label></td>
-                        <td><label for="LastName">{{i.lname}}</label></td>
-                        <td><label for="Email">{{i.email}}</label></td>
-                        <td><label for="Phone">{{i.phone}}</label></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+            <input type="text" placeholder="Search.." name="searchedData">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
     </div>
 </body>
 
